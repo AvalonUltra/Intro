@@ -1,4 +1,3 @@
-James Jin, [2024/12/1 16:55]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +18,19 @@ James Jin, [2024/12/1 16:55]
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            transition: color 0.3s;
+        }
+        header.light {
+            background: #f1f1f1;
+            color: #333;
+        }
+        header.light h1 {
+            color: #333;
         }
         nav {
             background: #555;
@@ -31,11 +43,18 @@ James Jin, [2024/12/1 16:55]
             margin: 0 1rem;
             text-decoration: none;
         }
+        nav.light {
+            background: #ddd;
+            color: #333;
+        }
+        nav.light a {
+            color: #333;
+        }
         .container {
             padding: 2rem;
         }
         h1, h2, h3 {
-            color: #333;
+            color: inherit;
         }
         footer {
             background: #333;
@@ -43,6 +62,11 @@ James Jin, [2024/12/1 16:55]
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        footer.light {
+            background: #f1f1f1;
+            color: #333;
         }
         .skills, .hobbies {
             list-style-type: square;
@@ -54,32 +78,10 @@ James Jin, [2024/12/1 16:55]
             background-color: #f9f9f9;
             color: #333;
         }
-        header.light, footer.light {
-            background: #f1f1f1;
-            color: #333;
-        }
-        nav.light {
-            background: #ddd;
-            color: #333;
-        }
-        nav.light a {
-            color: #333;
-        }
 
         /* Dark 模式 */
         body.dark {
             background-color: #121212;
-            color: #fff;
-        }
-        header.dark, footer.dark {
-            background: #333;
-            color: #fff;
-        }
-        nav.dark {
-            background: #222;
-            color: #fff;
-        }
-        nav.dark a {
             color: #fff;
         }
 
@@ -110,6 +112,7 @@ James Jin, [2024/12/1 16:55]
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -135,21 +138,54 @@ James Jin, [2024/12/1 16:55]
                 <li>GPA: 81.63/100</li>
                 <li>Honors: Third Prize - 12th National College Student Mathematics Competition (Nov 2020)</li>
             </ul>
+<p><strong>Jiangyan High School of Jiangsu Province</strong> (Taizhou, China)</p>
+            <ul>
+                <li>First Prize - National High School Mathematics League (Oct 2018)</li>
+                <li>Second Prize - 34th Chinese Physics Olympiad (Oct 2017)</li>
+                <li>Second Prize - 31st Chinese Chemistry Olympiad (Jiangsu Division) (Oct 2017)</li>
+            </ul>
         </section>
         <section id="experience">
             <h2>Experience</h2>
             <h3>Work Experience</h3>
-
-James Jin, [2024/12/1 16:55]
-<p><strong>Charging System R&D Engineer, BYD UK</strong> (Dec 2023 – Jun 2024)</p>
+            <p><strong>Charging System R&D Engineer, BYD UK</strong> (Dec 2023 – Jun 2024)</p>
             <ul>
                 <li>Resolved over 52 charging issues for electric buses.</li>
                 <li>Designed and tested emergency kill switch and anti-runaway features.</li>
             </ul>
-            <h3>Research & Projects</h3>
+            <p><strong>Charging System R&D Engineer, BYD China</strong> (Aug 2023 – Dec 2023)</p>
+            <ul>
+                <li>Improved CAN communication between EVCC systems and charging piles.</li>
+                <li>Resolved 40+ charging adaptability issues for Japanese orders.</li>
+            </ul>
+            <h3>Internship Experience</h3>
+            <p><strong>Robot Development Assistant, YIJIAHE</strong> (Jul 2023 – Aug 2023)</p>
+            <ul>
+                <li>Configured and deployed natural language processing models for multilingual support.</li>
+                <li>Researched end-to-end deep learning models for robotic systems.</li>
+            </ul>
+            <p><strong>Engineer in Practice, State Grid Jiangsu Electric Power Company</strong> (Jan 2023 – Mar 2023)</p>
+            <ul>
+                <li>Conducted data analysis to enhance grid performance and reliability.</li>
+                <li>Supported the implementation of smart grid technologies.</li>
+            </ul>
+            <p><strong>Big Data Analyst, Hoperun Information Technology</strong> (Jul 2022 – Sep 2022)</p>
+            <ul>
+                <li>Conducted requirement analysis and synchronized data from MySQL, MariaDB, and PostgreSQL.</li>
+                <li>Standardized data formats and improved data integration for the cloud computing division.</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
             <p><strong>Graduation Thesis</strong> (Nov 2022 – May 2023)</p>
             <ul>
                 <li>Proposed power compensation control methods for wind farms under severe grid failures.</li>
+                <li>Modeled machine-side converters using vector control methods.</li>
+            </ul>
+            <p><strong>SonarQube Project</strong> (Jul 2021 – Sep 2021)</p>
+            <ul>
+                <li>Developed an open-source project for code analysis and inspection using SonarQube.</li>
+                <li>Automated project management with REST API, Spring Boot, and Maven.</li>
             </ul>
         </section>
         <section id="skills">
@@ -179,17 +215,31 @@ James Jin, [2024/12/1 16:55]
     <script>
         // 检查并应用用户首选主题
         document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme') || 'light';
+            const savedTheme = localStorage.getItem('theme')
+|| 'light';
             document.body.classList.add(savedTheme);
+            document.querySelector('header').classList.add(savedTheme);
+            document.querySelector('footer').classList.add(savedTheme);
+            document.querySelector('nav').classList.add(savedTheme);
         });
 
-        // 切换主题
+        // 切换主题功能
         function toggleTheme() {
-            if (document.body.classList.contains('light')) {
-                document.body.classList.replace('light', 'dark');
+            const body = document.body;
+            const header = document.querySelector('header');
+            const footer = document.querySelector('footer');
+            const nav = document.querySelector('nav');
+            if (body.classList.contains('light')) {
+                body.classList.replace('light', 'dark');
+                header.classList.replace('light', 'dark');
+                footer.classList.replace('light', 'dark');
+                nav.classList.replace('light', 'dark');
                 localStorage.setItem('theme', 'dark');
             } else {
-                document.body.classList.replace('dark', 'light');
+                body.classList.replace('dark', 'light');
+                header.classList.replace('dark', 'light');
+                footer.classList.replace('dark', 'light');
+                nav.classList.replace('dark', 'light');
                 localStorage.setItem('theme', 'light');
             }
         }
