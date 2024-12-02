@@ -113,6 +113,7 @@
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -136,9 +137,9 @@
             <ul>
                 <li>B.Eng. in Electrical Engineering and Automation (Sep 2019 - Jul 2023)</li>
                 <li>GPA: 81.63/100</li>
-                <li>Honors: Third Prize - 12th National College Student Mathematics Competition (Nov 2020)</li>
+<li>Honors: Third Prize - 12th National College Student Mathematics Competition (Nov 2020)</li>
             </ul>
-<p><strong>Jiangyan High School of Jiangsu Province</strong> (Taizhou, China)</p>
+            <p><strong>Jiangyan High School of Jiangsu Province</strong> (Taizhou, China)</p>
             <ul>
                 <li>First Prize - National High School Mathematics League (Oct 2018)</li>
                 <li>Second Prize - 34th Chinese Physics Olympiad (Oct 2017)</li>
@@ -188,12 +189,19 @@
                 <li>Automated project management with REST API, Spring Boot, and Maven.</li>
             </ul>
         </section>
+        <section id="publications">
+            <h2>Publications</h2>
+            <p><strong>An Endogenous Security Defense Technology for Intelligent Vehicle Systems for Code Reuse Attack Protection</strong></p>
+            <ul>
+                <li>Published in <em>Advanced Computing and Endogenous Security. International Conference 2021</em> & IEEE Xplore.</li>
+            </ul>
+        </section>
         <section id="skills">
             <h2>Skills & Interests</h2>
             <h3>Technical Skills</h3>
             <ul class="skills">
-                <li>Programming: Python, JavaScript</li>
-                <li>Tools: MATLAB/Simulink, CANalyzer, PSCAD</li>
+                <li>Programming: Python, JavaScript, Linux</li>
+                <li>Tools: MATLAB/Simulink, PSCAD, CANalyzer, NX</li>
                 <li>Databases: PostgreSQL, MySQL</li>
             </ul>
             <h3>Hobbies</h3>
@@ -203,7 +211,7 @@
                 <li>Cucurbit Flute (Grade Level 10)</li>
             </ul>
         </section>
-        <section id="contact">
+<section id="contact">
             <h2>Contact</h2>
             <p>Email: dian75933@gmail.com</p>
             <p>Phone: (+86) 15061069866 / (+1) (352) 2460774</p>
@@ -215,8 +223,7 @@
     <script>
         // 检查并应用用户首选主题
         document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme')
-|| 'light';
+            const savedTheme = localStorage.getItem('theme') || 'light';
             document.body.classList.add(savedTheme);
             document.querySelector('header').classList.add(savedTheme);
             document.querySelector('footer').classList.add(savedTheme);
